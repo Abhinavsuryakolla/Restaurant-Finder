@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const RestaurantDetail = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // Use `id` from `useParams`
   console.log("Restaurant ID:", id);
   const [restaurant, setRestaurant] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -11,16 +11,20 @@ const RestaurantDetail = () => {
   useEffect(() => {
     const fetchRestaurant = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/restaurants/${id}`);
+        const response = await axios.get(
+          `https://restaurant-finder-vd3m.onrender.com/restaurants/${id}` // Use `id` here
+        );
+        console.log("Backend Response:", response.data); // Log the response data
         setRestaurant(response.data);
       } catch (error) {
         console.error("Error fetching restaurant details:", error);
+      } finally {
+        setLoading(false); // Ensure loading is set to false after the request
       }
-      setLoading(false);
     };
 
     fetchRestaurant();
-  }, [id]);
+  }, [id]); // Use `id` in the dependency array
 
   if (loading) {
     return <div className="flex justify-center items-center h-screen">Loading...</div>;

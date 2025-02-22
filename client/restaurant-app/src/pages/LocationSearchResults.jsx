@@ -14,7 +14,7 @@ const LocationSearch = () => {
     const radius = searchParams.get("radius") || 10; // Default radius if missing
 
     if (latitude && longitude) {
-      fetch(`http://localhost:5000/location?latitude=${latitude}&longitude=${longitude}&radius=${radius}`)
+      fetch(`https://restaurant-finder-vd3m.onrender.com/location?latitude=${latitude}&longitude=${longitude}&radius=${radius}`)
         .then((res) => res.json())
         .then((res) => setRestaurants(res.restaurants || [])) // Corrected this line
         .catch((err) => console.error("Error fetching restaurants:", err));

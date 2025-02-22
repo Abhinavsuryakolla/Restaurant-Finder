@@ -163,7 +163,7 @@ app.post("/search-by-image", upload.single("image"), async (req, res) => {
     if (searchTags.length === 0) {
       return res.json({ success: false, message: "❌ No relevant cuisine detected in the image." });
     }
-
+    
     const regexPatterns = searchTags.map(tag => new RegExp(tag, "i"));
     const restaurants = await Restaurant.find({
       $or: [
@@ -171,7 +171,7 @@ app.post("/search-by-image", upload.single("image"), async (req, res) => {
         { name: { $in: regexPatterns } } // Match restaurant names
       ]
     });
-
+    console.log(restaurants);
     // Debugging log (optional, remove later)
     console.log("Detected Tags:", searchTags);
     console.log("Found Restaurants:", restaurants.length);

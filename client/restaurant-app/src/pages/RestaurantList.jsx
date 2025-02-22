@@ -11,7 +11,7 @@ const RestaurantList = () => {
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/restaurants?page=${page}&limit=12`);
+        const response = await axios.get(`https://restaurant-finder-vd3m.onrender.com/restaurants?page=${page}&limit=12`);
         setRestaurants(response.data.restaurants);
         setTotalPages(Math.ceil(response.data.total / response.data.limit));
         setLoading(false);

@@ -18,7 +18,7 @@ const RestaurantCard = ({ restaurant }) => {
         <p className="text-xs text-gray-600 truncate">{restaurant.cuisines}</p>
         <p className="text-xs text-gray-500 truncate">{restaurant.location?.address}</p>
         <Link
-          to={`/restaurants/${restaurant.id}`}
+          to={`/restaurants/${restaurant._id}`}
           className="mt-2 block bg-blue-600 text-white text-center py-1 rounded-lg text-sm hover:bg-blue-700 transition duration-300"
         >
           View Details

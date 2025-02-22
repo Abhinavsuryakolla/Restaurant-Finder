@@ -51,12 +51,12 @@ const ImageSearch = () => {
         formData.append("image", file);
         formData.append("query", query);
 
-        response = await axios.post("http://localhost:5000/search-by-image", formData, {
+        response = await axios.post("https://restaurant-finder-vd3m.onrender.com/search-by-image", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
       } else {
         // Text-based search
-        response = await axios.get("http://localhost:5000/restaurants-by-cuisine", {
+        response = await axios.get("https://restaurant-finder-vd3m.onrender.com/restaurants-by-cuisine", {
           params: { cuisine: query }, // Use `cuisine` instead of `query`
         });
       }
