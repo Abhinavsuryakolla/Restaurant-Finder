@@ -14,11 +14,13 @@ const RestaurantList = () => {
         const response = await axios.get(`https://restaurant-finder-vd3m.onrender.com/restaurants?page=${page}&limit=12`);
         setRestaurants(response.data.restaurants);
         setTotalPages(Math.ceil(response.data.total / response.data.limit));
+        console.log(response);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching restaurants:", error);
         setLoading(false);
       }
+
     };
 
     fetchRestaurants();

@@ -14,8 +14,8 @@ const ImageSearch = () => {
 
   // Pagination state
   const [page, setPage] = useState(1);
-  const restaurantsPerPage = 12; // 12 restaurants per page
-  const restaurantsPerRow = 4; // 4 restaurants per row
+  const restaurantsPerPage = 12; 
+  const restaurantsPerRow = 4; 
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];

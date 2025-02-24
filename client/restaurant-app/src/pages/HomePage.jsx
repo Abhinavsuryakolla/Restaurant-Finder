@@ -1,19 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import backgroundImage from '../assets/background.jpg'; // Adjust the path as needed
+import backgroundImage from '../assets/background.jpg'; 
 const HomePage = () => {
   return (
     <div
       className="flex flex-col items-center justify-center h-screen bg-cover bg-center"
       style={{
-        backgroundImage: `url(${backgroundImage})`, // Replace with your image URL
-        filter: "brightness(90%)", // Dim the background image
+        backgroundImage: `url(${backgroundImage})`, 
+        filter: "brightness(90%)", 
       }}
     >
       <div className="p-8 rounded-lg text-center">
         {/* Bright text with drop shadow */}
         <h1 className="text-6xl font-bold text-white mb-4 drop-shadow-lg">
-          Restaurant App
+          Cuisine Matrix
         </h1>
         <p className="text-xl text-gray-100 mb-8 drop-shadow-md">
           Discover the best restaurants near you
