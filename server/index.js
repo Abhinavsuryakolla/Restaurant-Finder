@@ -9,11 +9,7 @@ const { ObjectId } = require("mongoose").Types;
 dotenv.config();
 const app = express();
 
-app.use(cors({
-    origin: ["http://localhost:5173"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-}));
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI, {
